@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_140451) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "sex", default: true
+    t.integer "sex"
     t.integer "age"
     t.string "password"
   end
