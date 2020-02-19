@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :classification %>
-    <%= form.number_field :classification %>
+    <%= form.label :input_date %>
+    <%= form.number_field :input_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.number_field :category %>
   </div>
 
   <div class="field">

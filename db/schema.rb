@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_123630) do
+ActiveRecord::Schema.define(version: 2020_02_19_133445) do
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.datetime "date"
-    t.integer "classification"
+    t.integer "user_id"
+    t.integer "input_date"
+    t.integer "category"
     t.integer "money"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

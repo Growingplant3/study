@@ -14,9 +14,10 @@ class PaymentsTest < ApplicationSystemTestCase
     visit payments_url
     click_on "New Payment"
 
-    fill_in "Classification", with: @payment.classification
-    fill_in "Date", with: @payment.date
+    fill_in "Category", with: @payment.category
+    fill_in "Input date", with: @payment.input_date
     fill_in "Money", with: @payment.money
+    fill_in "User", with: @payment.user_id
     click_on "Create Payment"
 
     assert_text "Payment was successfully created"
@@ -27,9 +28,10 @@ class PaymentsTest < ApplicationSystemTestCase
     visit payments_url
     click_on "Edit", match: :first
 
-    fill_in "Classification", with: @payment.classification
-    fill_in "Date", with: @payment.date
+    fill_in "Category", with: @payment.category
+    fill_in "Input date", with: @payment.input_date
     fill_in "Money", with: @payment.money
+    fill_in "User", with: @payment.user_id
     click_on "Update Payment"
 
     assert_text "Payment was successfully updated"
