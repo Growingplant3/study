@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @payment.user_id %>
+</p>
+
+<p>
+  <strong>Input date:</strong>
+  <%= @payment.input_date %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @payment.category %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @payment.money %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>
