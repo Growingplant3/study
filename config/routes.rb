@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :payments
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :payments
+  root 'users#index' # ここを追記します
+  get 'users/index' # 自動で設定されたルーティング
 end
