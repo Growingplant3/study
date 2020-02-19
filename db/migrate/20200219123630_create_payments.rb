@@ -1,8 +1,9 @@
 class CreatePayments < ActiveRecord::Migration[6.0]
   def change
     create_table :payments do |t|
-      t.datetime :date
-      t.integer :classification
+      t.integer :user_id
+      t.datetime :input_date
+      t.integer :category
       t.integer :money
 
       t.timestamps
