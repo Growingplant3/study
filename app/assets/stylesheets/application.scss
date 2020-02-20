@@ -19,15 +19,24 @@ body {
     padding: 0px;
 }
 
-ul {
-    margin: 0px;
-    padding: 0px;
-}
-
 .all {
     height: 80px;
     background: #000000;
     color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav_title {
+    float: left;
+}
+
+.app_name {
+    margin: 0px;
+}
+
+.nav {
+    float: right;
 }
 
 #nav ul {
@@ -38,8 +47,4 @@ ul {
 #nav ul li { 
     display: inline-block;
     vertical-align: middle;
-  }
-
-.app_name {
-    text-align: left;
 }
