@@ -14,24 +14,32 @@
  *= require_self
  */
 
-
-
-.all {
+body {
     margin: 0px;
     padding: 0px;
 }
-.header_name {
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.all {
     height: 80px;
     background: #000000;
     color: #ffffff;
 }
 
-.header_element {
-    clear: both;
+#nav ul {
+    list-style-type: none;
+    text-align: right
 }
 
-.footer_name {
-    height: 80px;
-    background: #000000;
-    color: #ffffff;
+#nav ul li { 
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+.app_name {
+    text-align: left;
 }
