@@ -21,6 +21,7 @@ body {
 
 header {
     display: flex;
+    justify-content: space-around;
 }
 
 .all {
@@ -33,7 +34,6 @@ header {
 
 #nav_title {
     line-height: 80px;
-    justify-content: space-around;
 }
 
 .app_name {
