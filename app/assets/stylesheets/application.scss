@@ -19,6 +19,10 @@ body {
     padding: 0px;
 }
 
+header {
+    display: flex;
+}
+
 .all {
     height: 80px;
     background: #000000;
@@ -27,24 +31,24 @@ body {
     padding: 0px;
 }
 
-.nav_title {
-    float: left;
+#nav_title {
+    line-height: 80px;
+    justify-content: space-around;
 }
 
 .app_name {
     margin: 0px;
 }
 
+
 .nav {
     float: right;
 }
-
-#nav ul {
+.nav ul {
     list-style-type: none;
-    text-align: right
 }
 
-#nav ul li { 
+.nav li { 
     display: inline-block;
-    vertical-align: middle;
+    padding: 15px;
 }
