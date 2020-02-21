@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.all {
+    height: 80px;
+    background: #000000;
+    color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+}
+
+#nav_title {
+    line-height: 80px;
+}
+
+.app_name {
+    margin: 0px;
+}
+
+
+.nav {
+    float: right;
+}
+.nav ul {
+    list-style-type: none;
+}
+
+.nav li { 
+    display: inline-block;
+    padding: 15px;
+}
