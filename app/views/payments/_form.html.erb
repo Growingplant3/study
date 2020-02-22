@@ -18,9 +18,7 @@
 
   <div class="field">
     <%= form.label :日にち %>
-    <div class ="input_date">
-      <input name="input_date" type="date" />
-    </div>
+    <%= form.date_field :input_date %>
   </div>
 
   <div class="field">
@@ -32,7 +30,7 @@
     <%= form.label :金額 %>
     <%= form.number_field :money %>
   </div>
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>
