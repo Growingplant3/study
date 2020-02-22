@@ -12,25 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザーID %>
     <%= form.number_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :input_date %>
-    <%= form.number_field :input_date %>
+    <%= form.label :日にち %>
+    <%= form.date_field :input_date %>
   </div>
 
   <div class="field">
-    <%= form.label :category %>
+    <%= form.label :分類 %>
     <%= form.number_field :category %>
   </div>
 
   <div class="field">
-    <%= form.label :money %>
+    <%= form.label :金額 %>
     <%= form.number_field :money %>
   </div>
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>

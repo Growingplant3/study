@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザーID:</strong>
   <%= @payment.user_id %>
 </p>
 
 <p>
-  <strong>Input date:</strong>
+  <strong>日にち:</strong>
   <%= @payment.input_date %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>分類:</strong>
   <%= @payment.category %>
 </p>
 
 <p>
-  <strong>Money:</strong>
+  <strong>金額:</strong>
   <%= @payment.money %>
 </p>
 
-<%= link_to 'Edit', edit_payment_path(@payment) %> |
-<%= link_to 'Back', payments_path %>
+<%= link_to '編集する', edit_payment_path(@payment) %> |
+<%= link_to '戻る', payments_path %>
