@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :分類 %>
-    <%= form.number_field :category %>
+    <%= form.select :category,Payment.categories.keys.map {|k| [I18n.t("enums.payment.categories.#{k}"), k]} %>
   </div>
 
   <div class="field">
