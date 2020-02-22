@@ -1,7 +1,7 @@
 ja:
   enums:
     payment:
-      categories:
+      category:
         food: "食費"
         daily: "日用品"
         transport: "交通費" 
