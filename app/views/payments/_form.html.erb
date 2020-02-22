@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :分類 %>
-    <%= form.number_field :category %>
+    <%= form.select :category, Payment.categories_i18n.invert %>
   </div>
 
   <div class="field">
