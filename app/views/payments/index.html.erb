@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>ユーザーID</th>
       <th>日にち</th>
       <th>分類</th>
       <th>金額</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @payments.each do |payment| %>
       <tr>
-        <td><%= payment.user_id %></td>
         <td><%= payment.input_date.strftime("%Y年%m月%d日") %></td>
         <td><%= payment.category_i18n %></td>
         <td><%= payment.money %></td>
