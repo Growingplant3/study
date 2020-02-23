@@ -27,9 +27,6 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payment_params)
     @payment.user_id = current_user.id
-    #item_id = Item.find_by(code: params[:production][:item_id]).id
-    #Payment.user_id = user_id
-    #Production.create(production_params.merge(item_id: item_id))
 
     respond_to do |format|
       if @payment.save
