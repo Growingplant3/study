@@ -17,6 +17,12 @@
   </div>
 
   <div class="field">
+    <%= form.label :email %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+
+  <div class="field">
     <%= form.label :sex %>
     <%= form.number_field :sex %>
   </div>
