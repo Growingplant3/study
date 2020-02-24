@@ -3,7 +3,10 @@ ja:
     attributes:
       user:
         current_password: "現在のパスワード"
+        name: "名前（ハンドルネーム）"
         email: "メールアドレス"
+        sex: "年齢"
+        age: "性別"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
