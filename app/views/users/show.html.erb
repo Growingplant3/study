@@ -12,7 +12,7 @@
 
 <p>
   <strong>性別:</strong>
-  <%= @user.sex %>
+  <%= @user.sex_i18n %>
 </p>
 
 <p>
@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to '編集する', edit_user_path(@user) %> |
+<%= link_to '削除する', "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'} %> |
 <%= link_to '戻る', users_path %>
