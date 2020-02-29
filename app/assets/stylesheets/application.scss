@@ -22,14 +22,14 @@ body {
 header {
     display: flex;
     justify-content: space-around;
+    margin: 0px;
+    padding: 0px;
 }
 
 .all {
     height: 80px;
     background: #39e90d;
     color: #000000;
-    margin: 0px;
-    padding: 0px;
 }
 
 #nav_title {
@@ -43,6 +43,7 @@ header {
 .nav {
     float: right;
 }
+
 .nav ul {
     list-style-type: none;
 }
@@ -50,4 +51,9 @@ header {
 .nav li { 
     display: inline-block;
     padding: 15px;
+}
+
+.index-message {
+    background-color: #000000;
+    color: #ffffff;
 }
