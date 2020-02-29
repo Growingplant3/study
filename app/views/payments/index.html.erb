@@ -18,7 +18,6 @@
         <td><%= payment.input_date.strftime("%Y年%m月%d日") %></td>
         <td><%= payment.category_i18n %></td>
         <td><%= payment.money %></td>
-        <td><%= link_to '詳細表示', payment %></td>
         <td><%= link_to '編集する', edit_payment_path(payment) %></td>
         <td><%= link_to '削除する', payment, method: :delete, data: { confirm: '本当に削除しても良いですか？' } %></td>
       </tr>
