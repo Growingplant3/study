@@ -53,7 +53,12 @@ header {
     padding: 15px;
 }
 
-.index-message {
+.message-color {
     background-color: #000000;
     color: #ffffff;
+}
+
+.message-color h1 {
+    margin-top: 0;
+    padding: 0;
 }
