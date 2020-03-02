@@ -31,6 +31,11 @@
     <%= form.select :sex, User.sexes_i18n.invert %>
   </div>
 
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

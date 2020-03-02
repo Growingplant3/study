@@ -9,4 +9,6 @@ class User < ApplicationRecord
     male: 1,
     female: 2,
   }
+
+  mount_uploader :image, ImageUploader
 end

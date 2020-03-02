@@ -22,6 +22,12 @@
       <%= @user.age %>
     </p>
 
+    <% if @user.image? %>
+      <%= image_tag @user.image.url %>
+    <% else %>
+      <%= image_tag "noimage.gif %>
+    <% end %>
+
     <%= link_to '編集する', edit_user_path(@user) %> |
     <%= link_to '削除する', "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'} %> |
     <%= link_to '戻る', users_path %>
