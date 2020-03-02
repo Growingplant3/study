@@ -1,7 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -73,4 +73,5 @@ class ImageUploader < CarrierWave::Uploader::Base
       name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
       name.downcase
     end
+  end
 end
