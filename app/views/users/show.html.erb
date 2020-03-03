@@ -23,7 +23,7 @@
     </p>
 
     <% if @user.image? %>
-      <%= image_tag @user.image.url %>
+      <%= image_tag @user.image.url, :width => '2%' %>
     <% else %>
       <p>残念！画像がありませんでした。</p>
     <% end %>
