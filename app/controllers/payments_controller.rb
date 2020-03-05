@@ -6,6 +6,8 @@ class PaymentsController < ApplicationController
   # GET /payments.json
   def index
     @payments = Payment.all
+    @payment = Payment.find(params[:input_date])
+    #findがいいのか、whereがいいのか考え中
   end
 
   # GET /payments/1
