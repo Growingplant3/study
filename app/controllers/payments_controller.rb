@@ -6,8 +6,14 @@ class PaymentsController < ApplicationController
   # GET /payments.json
   def index
     @payments = Payment.all
-    @payment = Payment.find(params[:input_date])
-    #findがいいのか、whereがいいのか考え中
+    if Payment.present?
+      @format_date = Payment.new(input_date: params[:input_date])
+      if @payments.select("input_date").strftime("%Y%m") == @form.select("input_date").strftime("%Y%m")
+        i = @Payments.select("input_date")
+        c = @Payments.select("input_date")
+        @payment = Payment.where(input_date: i).where(category: c)
+      end
+    end
   end
 
   # GET /payments/1
