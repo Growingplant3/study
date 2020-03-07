@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
       format_date = Payment.new(input_date: params[:input_date])
       if @payments.select("input_date").strftime("%Y%m") == format_date.select("input_date").strftime("%Y%m")
         i = @Payments.select("input_date")
-        c = @Payments.select("input_date")
+        c = @Payments.select("category")
         @payment = Payment.where(input_date: i).where(category: c)
       end
     end
