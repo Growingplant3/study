@@ -8,11 +8,11 @@ class PaymentsController < ApplicationController
     @payments = Payment.all
     if Payment.present?
       format_date = Payment.new(input_date: params[:input_date])
-      if @payments.select("input_date").strftime("%Y%m") == format_date.select("input_date").strftime("%Y%m")
-        i = @Payments.select("input_date")
-        c = @Payments.select("category")
+      #if @payments.pluck("input_date") == params[input_date(2i)]
+        i = @payments.select("input_date")
+        c = @payments.select("category")
         @payment = Payment.where(input_date: i).where(category: c)
-      end
+      #end
     end
   end
 
