@@ -7,11 +7,13 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     if Payment.present?
-      format_date = Payment.new(input_date: params[:input_date])
+      #format_date = Payment.new(input_date: params[:input_date])
+      #if DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"') == @payments.input_date
       #if @payments.pluck("input_date") == params[input_date(2i)]
-        i = @payments.select("input_date")
-        c = @payments.select("category")
-        @payment = Payment.where(input_date: i).where(category: c)
+      i = DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"')
+      c = @payments.select("category")
+      @payment = Payment.where(input_date: [i..i + 1.month - 1.day]).where(category: c)
+      #データの比較はモデルで行う方が良い
       #end
     end
   end

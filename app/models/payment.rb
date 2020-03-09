@@ -14,4 +14,5 @@ class Payment < ApplicationRecord
         other: 11,
         salary: 12,
     }
+# scopeを使って、分類月で合計金額を持ってくる
 end
