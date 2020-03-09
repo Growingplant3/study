@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
       c = 0
       # one_month_one_categoryは一ヶ月分のレコードからカテゴリ別で検索したもの
       one_month_one_category = one_month.where(category: c)
-        while c <= 12 do
+      while c <= 12 do
         puts one_month_one_category
         c += 1
       end      
