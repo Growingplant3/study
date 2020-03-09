@@ -7,12 +7,18 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     if Payment.present?
-      #format_date = Payment.new(input_date: params[:input_date])
-      #if DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"') == @payments.input_date
       #if @payments.pluck("input_date") == params[input_date(2i)]
+      # iはviewのformから値を取得し、datetime型へ変換したもの
       i = DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"')
-      c = @payments.select("category")
-      @payment = Payment.where(input_date: [i..i + 1.month - 1.day]).where(category: c)
+      # one_monthは一ヶ月分のレコードを取得したもの
+      one_month = Payment.where(input_date: [i..i + 1.month - 1.day])
+      c = 0
+      # one_month_one_categoryは一ヶ月分のレコードからカテゴリ別で検索したもの
+      one_month_one_category = one_month.where(category: c)
+        while c <= 12 do
+        puts one_month_one_category
+        c += 1
+      end      
       #データの比較はモデルで行う方が良い
       #end
     end
