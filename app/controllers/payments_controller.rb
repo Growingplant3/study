@@ -7,14 +7,21 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     if Payment.present?
+      #if @payments.pluck("input_date") == params[input_date(2i)]
       i = DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"')
       c = 0
-      x = Payment.where(input_date: [i..i + 1.month - 1.day]).where(category: c)
-      x.each do |a|
-        x = Payment.where(input_date: [i..i + 1.month - 1.day]).where(category: c)
-        puts a
-        c += 1
+      payments = Payment.where(input_date: [i..i + 1.month - 1.day]).where(category: c)
+      payments.each do |payment|
+        puts payment.category
+        puts "---"
+        puts payment.money
+        puts "------"
+        category_zero_total_money = payment.money
+        category_zero_total_money += payment.money
+        puts category_zero_total_money
+        puts "----------"
       end      
+      #end
     end
   end
 
