@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
       #if @payments.pluck("input_date") == params[input_date(2i)]
       @category_total_money = {"food" => 0,"daily" => 0,"transport" => 0,"entertainment" => 0,"education" => 0,"insurance" => 0,"medical" => 0,"communicstion" => 0,"utilities" => 0,"rent" => 0,"saving" => 0,"other" => 0,"salary" => 0}
       i = DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"')
-      payments = Payment.where(input_date: [i..i + 1.month - 1.day])
+      payments = Payment.find_by_input_date(1)
       payments.each do |payment|
         @category_total_money[payment.category] += payment.money
         puts payment.category
