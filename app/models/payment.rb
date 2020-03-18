@@ -14,4 +14,10 @@ class Payment < ApplicationRecord
         other: 11,
         salary: 12,
     }
+    # scopeを使って、分類月で合計金額を持ってくる
+    scope :find_by_input_date, ->(month) {
+        from = Time.now.at_beginning_of_day
+        to = (from + 1.month)
+        where(input_date: from...to)
+    }
 end

@@ -27,7 +27,14 @@
         <% end %>
       </tbody>
     </table>
-
+    <a>選択月の分類別累計金額が表示できます。</a>
+    <%= form_with url: payments_path, html: {method: 'GET'} do |form| %>
+      <%= form.label :検索したい月を選択 %>
+      <%= form.date_select :iuput_date, {discard_day: true} %>
+      <%= form.submit "累計表示" %>
+    <% end %>
+    <a>ここに分類別累計金額を表示</a><br>
+    <a>@payment.category_i18n 金額: @payment.money</a>
   </div>
-  <img src="/assets/the-honest-company-_UzLeRFhUPI-unsplash.jpg" width="100%" height:"100%">
+  <img src="/assets/the-honest-company-_UzLeRFhUPI-unsplash.jpg" width="100%" height="100%">
 </div>
