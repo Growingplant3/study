@@ -14,20 +14,11 @@ class PaymentsController < ApplicationController
       payments = Payment.where(input_date: [i..i + 1.month - 1.day])
       payments.each do |payment|
         @category_total_money[payment.category] += payment.money
-        puts payment.category
-        puts payment.money
         puts @category_total_money
       end
       @category_total_money.each do |key, value|
-       "#{key}のカテゴリである、合計金額は#{value}"です。
+       puts "#{key}のカテゴリである、合計金額は#{value}です。"
       end
-      #puts "---"
-      #puts key
-      #puts "---"
-      #puts value
-      #puts "---"
-      #puts index
-      #end
     end
   end
 
