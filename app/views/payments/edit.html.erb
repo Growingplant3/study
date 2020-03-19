@@ -1,6 +1,7 @@
-<h1>入力データの編集</h1>
+<div class="show-photo">
+    <h2>入力データの編集</h2>
+    <%= render 'form', payment: @payment %>
 
-<%= render 'form', payment: @payment %>
-
-<%= link_to '詳細表示', @payment %> |
-<%= link_to '戻る', payments_path %>
+    <%= link_to '詳細表示', @payment %> |
+    <%= link_to '戻る', payments_path %>
+</div>
