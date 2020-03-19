@@ -7,19 +7,14 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     if Payment.present?
-      #@category_total_money = {"food" => 0,"daily" => 0,"transport" => 0,"entertainment" => 0,"education" => 0,"insurance" => 0,"medical" => 0,"communicstion" => 0,"utilities" => 0,"rent" => 0,"saving" => 0,"other" => 0,"salary" => 0}
       @category_total_money = {}
       Payment.categories_i18n.each do |_, value|
         @category_total_money[value] = 0
       end
-      
-      
       i = DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"')
       payments = Payment.where(input_date: [i..i + 1.month - 1.day])
       payments.each do |payment|
-        #@category_total_money[payment.category] += payment.money
         @category_total_money[payment.category_i18n] += payment.money
-        puts @category_total_money
       end
       @category_total_money.each do |key, value|
        puts "#{key}のカテゴリである、合計金額は#{value}です。"
