@@ -11,13 +11,12 @@ class PaymentsController < ApplicationController
       Payment.categories_i18n.each do |_, value|
         @category_total_money[value] = 0
       end
-      i = DateTime.parse('"params[iuput_date(1i)]"-"params[input_date(2i)]"-"01" "00:00:00"')
+      input_params_year = params["iuput_date(1i)"]
+      input_params_month = params["iuput_date(2i)"]
+      i = DateTime.parse("#{input_params_year}-#{input_params_month}-01 00:00:00")
       payments = Payment.where(input_date: [i..i + 1.month - 1.day])
       payments.each do |payment|
         @category_total_money[payment.category_i18n] += payment.money
-      end
-      @category_total_money.each do |key, value|
-       puts "#{key}のカテゴリである、合計金額は#{value}です。"
       end
     end
   end
