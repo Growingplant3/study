@@ -34,7 +34,6 @@
       <%= form.submit "累計表示" %>
     <% end %>
     <a>ここに分類別累計金額を表示</a><br>
-    <a>@payment.category_i18n 金額: @payment.money</a><br>
     <%= @category_total_money.each do |key, value| %>
       <%= puts "#{key}カテゴリの、合計金額は#{value}円です。" %>
     <% end %>
