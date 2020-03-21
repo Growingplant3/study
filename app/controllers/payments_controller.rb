@@ -11,17 +11,14 @@ class PaymentsController < ApplicationController
       Payment.categories_i18n.each do |_, value|
         @category_total_money[value] = 0
       end
-      if params.has_key["iuput_date(1i)"] ?
+      if params.has_key?("iuput_date(1i)")
         input_params_year = params["iuput_date(1i)"]
         input_params_month = params["iuput_date(2i)"]
       else
         input_params_year = DateTime.now.year.to_s
         input_params_month = DateTime.now.month.to_s
-        if input_params_month < 10
-          input_params_month = "0"+input_params_month
-        end
       end
-      i = DateTime.parse("#{input_params_year}-#{input_params_month}-01 00:00:00")
+      i = DateTime.parse("#{input_params_year}-#{input_params_month}-01")
       payments = Payment.where(input_date: [i..i + 1.month - 1.day])
       payments.each do |payment|
         @category_total_money[payment.category_i18n] += payment.money

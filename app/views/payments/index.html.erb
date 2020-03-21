@@ -31,7 +31,7 @@
     <%= form_with url: payments_path, html: {method: 'GET'} do |form| %>
       <%= form.label :検索したい月を選択 %>
       <%= form.date_select :iuput_date, {discard_day: true} %>
-      <%= form.submit "累計表示" %>
+      <%= form.submit "金額表示" %>
     <% end %>
     <a>ここに分類別累計金額を表示</a><br>
     <%= @category_total_money.each do |key, value| %>
