@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>日にち:</strong>
-  <%= @payment.input_date.strftime("%Y年%m月%d日") %>
-</p>
+<div class="message-color">
+  <p id="p-first">
+    <strong>日にち:</strong>
+    <%= @payment.input_date.strftime("%Y年%m月%d日") %>
+  </p>
 
-<p>
-  <strong>分類:</strong>
-  <%= @payment.category_i18n %>
-</p>
+  <p>
+    <strong>分類:</strong>
+    <%= @payment.category_i18n %>
+  </p>
 
-<p>
-  <strong>金額:</strong>
-  <%= @payment.money %>
-</p>
+  <p>
+    <strong>金額:</strong>
+    <%= @payment.money %>
+  </p>
 
-<%= link_to '編集する', edit_payment_path(@payment) %> |
-<%= link_to '戻る', payments_path %>
+  <%= link_to '編集する', edit_payment_path(@payment) %> |
+  <%= link_to '戻る', payments_path %>
+</div>

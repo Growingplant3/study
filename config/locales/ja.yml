@@ -227,7 +227,7 @@ ja:
         rent: "家賃"
         saving: "貯蓄"
         other: "その他"
-        salary: “給与"
+        salary: "給与"
     user:
       sex:
         unknown: "--"
