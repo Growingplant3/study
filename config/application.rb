@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module Study
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.beginning_of_week = :sunday
     config.load_defaults 6.0
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
