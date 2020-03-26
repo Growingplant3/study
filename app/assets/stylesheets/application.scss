@@ -85,3 +85,39 @@ h2 {
 .show-photo {
     background-color: #64e1e8;
 }
+
+.simple-calendar {
+    .day {}
+  
+    .wday-0 {
+        background-color: red;
+    }
+    .wday-1, {
+        background-color:  white;
+    }
+    .wday-2 {
+        background-color:  white;}
+    .wday-3 {
+        background-color:  white;}
+    .wday-4 {
+        background-color:  white;}
+    .wday-5 {
+        background-color:  white;}
+    .wday-6 {
+        background-color: blue;
+    }
+  
+    .today {
+        background-color: pink;
+    }
+    .past {}
+    .future {}
+  
+    .start-date {}
+  
+    .prev-month {}
+    .next-month { }
+    .current-month {}
+  
+    .has-events {}
+  }
