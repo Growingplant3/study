@@ -34,7 +34,12 @@
           <td><%= "#{value}" %></td>
         </tr>
       <% end %>
+
+      <% current_lv = @category_total_money.values.inject(:+) %>
     </table>
+    <% if current_lv > 0 %>
+      <a>あなたは今までに<%= current_lv %>円分の記録を積み重ねてきました。頑張りましたね！</a>
+    <% end %>
   </div>
   <img src="/assets/the-honest-company-_UzLeRFhUPI-unsplash.jpg" width="100%" height="100%">
 </div>
