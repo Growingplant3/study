@@ -10,7 +10,7 @@
 
       <% payments.each do |payment| %>
         <div>
-          <%= payment.category %>
+          <%= payment.category_i18n %>
           <%= payment.money %>
           <%= link_to '編集する', edit_payment_path(payment) %>
           <%= link_to '削除する', payment, method: :delete, data: { confirm: '本当に削除しても良いですか？' } %>          
