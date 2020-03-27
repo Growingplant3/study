@@ -10,5 +10,7 @@ class User < ApplicationRecord
     female: 2,
   }
 
+  has_many :payments, dependent: :destroy
+  
   mount_uploader :image, ImageUploader
 end

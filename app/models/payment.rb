@@ -1,4 +1,6 @@
 class Payment < ApplicationRecord
+    belongs_to :user
+    
     enum category: {
         food: 0,
         daily: 1,
@@ -20,4 +22,5 @@ class Payment < ApplicationRecord
         to = (from + 1.month)
         where(input_date: from...to)
     }
+
 end
