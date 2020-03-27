@@ -1,6 +1,6 @@
 <h2>ユーザー登録</h2>
 
-　<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class = "show-photo " >
@@ -30,8 +30,8 @@
     <div class="actions">
       <%= f.submit "登録する" %>
     </div>
-  <% end %>
   </div>
+<% end %>
 
 <div class = "show-photo" >
 <%= render "devise/shared/links" %>
