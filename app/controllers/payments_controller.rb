@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.json
   def index
-    @payments = Payment.all
+    @payments = Payment.all.find_by(user_id: current_user.id)
     if Payment.present?
       @category_total_money = {}
       Payment.categories_i18n.each do |_, value|
@@ -20,8 +20,8 @@ class PaymentsController < ApplicationController
       end
       i = DateTime.parse("#{input_params_year}-#{input_params_month}-01")
       payments = Payment.where(input_date: [i..i + 1.month - 1.day])
-      payments.each do |payment|
-        @category_total_money[payment.category_i18n] += current_user.payment.money
+      payments.each do |payments|
+        @category_total_money[payment.category_i18n] += current_user.payments
       end
     end
   end
