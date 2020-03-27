@@ -18,8 +18,6 @@
       <% end %>
     <% end %>
 
-    <% @payments.each do |payment| %>
-    <% end %>
     <a>選択月の分類別合計金額が表示できます。</a>
     <%= form_with url: payments_path, local: true, html: {method: 'GET'} do |form| %>
       <%= form.label :検索したい月を選択 %>

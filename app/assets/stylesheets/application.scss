@@ -62,6 +62,7 @@ header {
 h2 {
     margin: 0;
     padding: 0;
+    background-color: #64e1e8;
 }
 
 #notice {
@@ -126,3 +127,13 @@ h2 {
       background-color: black;
       color: white;
   }
+
+.actions {
+      margin: 0;
+  }
+
+.error-explanation {
+    margin: 0;
+    padding: 0;
+    background-color: #64e1e8;
+}
