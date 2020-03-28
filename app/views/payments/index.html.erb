@@ -26,17 +26,21 @@
     <% end %>
     <a>ここに分類別累計金額を表示</a><br>
     <table border= "1" bgcolor = "yellow">
-      <% @category_total_money.each do |key, value| %>
+      <% @search_area_money.each do |key, value| %>
         <tr>
           <th><%= "#{key}" %></th>
-          <td><%= "#{value}" %></td>
+          <td><%= "#{value}円" %></td>
         </tr>
       <% end %>
 
-      <% current_month_lv = @category_total_money.values.inject(:+) %>
+      <% search_area_money = @search_area_money.values.inject(:+) %>
+      <% all_area_money = @all_area_money.values.inject(:+) %>
     </table>
-    <% if current_month_lv > 0 %>
-      <a>あなたは今月<%= current_month_lv %>円分の記録を積み重ねてきました。頑張りましたね！</a>
+    <% if search_area_money > 0 %>
+      <a>あなたは今月<%=　search_area_money %>円分の記録を積み重ねてきました。頑張りましたね！</a></br>
+    <% end %>
+    <% if all_area_money > 0 %>
+      <a>あなたは今までに<%= all_area_money %>円分の記録を積み重ねてきました。えらい！</a></br>    
     <% end %>
   </div>
   <img src="/assets/the-honest-company-_UzLeRFhUPI-unsplash.jpg" width="100%" height="100%">

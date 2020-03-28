@@ -7,9 +7,13 @@ class PaymentsController < ApplicationController
   def index
     @payments = current_user.payments
     if Payment.present?
-      @category_total_money = {}
+      @all_area_money = {}
       Payment.categories_i18n.each do |_, value|
-        @category_total_money[value] = 0
+        @all_area_money[value] = 0
+      end
+      @search_area_money = {}
+      Payment.categories_i18n.each do |_, value|
+        @search_area_money[value] = 0
       end
       if params.has_key?("iuput_date(1i)")
         input_params_year = params["iuput_date(1i)"]
@@ -21,7 +25,11 @@ class PaymentsController < ApplicationController
       i = DateTime.parse("#{input_params_year}-#{input_params_month}-01")
       search_area = @payments.where(input_date: [i..i + 1.month - 1.day])
       search_area.each do |payment|
-        @category_total_money[payment.category_i18n] += payment.money
+        @search_area_money[payment.category_i18n] += payment.money
+      end
+      all_area = @payments
+      all_area.each do |payment|
+        @all_area_money[payment.category_i18n] += payment.money
       end
     end
   end
