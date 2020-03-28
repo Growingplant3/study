@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = current_user
-    @payments = @user.payments
   end
 
   # GET /users/new
