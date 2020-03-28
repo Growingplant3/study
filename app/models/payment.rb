@@ -1,4 +1,6 @@
 class Payment < ApplicationRecord
+    belongs_to :user
+    
     enum category: {
         food: 0,
         daily: 1,
@@ -13,11 +15,5 @@ class Payment < ApplicationRecord
         saving: 10,
         other: 11,
         salary: 12,
-    }
-    # scopeを使って、分類月で合計金額を持ってくる
-    scope :find_by_input_date, ->(month) {
-        from = Time.now.at_beginning_of_day
-        to = (from + 1.month)
-        where(input_date: from...to)
     }
 end

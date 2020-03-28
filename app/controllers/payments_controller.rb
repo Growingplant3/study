@@ -1,11 +1,11 @@
 class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   # GET /payments
   # GET /payments.json
   def index
-    @payments = Payment.all
+    @payments = current_user.payments
     if Payment.present?
       @category_total_money = {}
       Payment.categories_i18n.each do |_, value|
@@ -19,8 +19,8 @@ class PaymentsController < ApplicationController
         input_params_month = DateTime.now.month.to_s
       end
       i = DateTime.parse("#{input_params_year}-#{input_params_month}-01")
-      payments = Payment.where(input_date: [i..i + 1.month - 1.day])
-      payments.each do |payment|
+      search_area = @payments.where(input_date: [i..i + 1.month - 1.day])
+      search_area.each do |payment|
         @category_total_money[payment.category_i18n] += payment.money
       end
     end
