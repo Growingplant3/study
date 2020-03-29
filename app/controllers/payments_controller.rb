@@ -22,6 +22,12 @@ class PaymentsController < ApplicationController
         input_params_year = DateTime.now.year.to_s
         input_params_month = DateTime.now.month.to_s
       end
+      puts @payments
+      puts "--"
+      puts @search_area_money
+      puts "----"
+      puts @all_area_money
+      puts "------"
       i = DateTime.parse("#{input_params_year}-#{input_params_month}-01")
       search_area = @payments.where(input_date: [i..i + 1.month - 1.day])
       search_area.each do |payment|

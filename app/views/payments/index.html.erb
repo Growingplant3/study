@@ -37,7 +37,7 @@
       <% all_area_money = @all_area_money.values.inject(:+) %>
     </table>
     <% if search_area_money > 0 %>
-      <a>あなたは今月<%=　search_area_money %>円分の記録を積み重ねてきました。頑張りましたね！</a></br>
+      <a>あなたは今月<%= search_area_money %>円分の記録を積み重ねてきました。頑張りましたね！</a></br>
     <% end %>
     <% if all_area_money > 0 %>
       <a>あなたは今までに<%= all_area_money %>円分の記録を積み重ねてきました。えらい！</a></br>    
