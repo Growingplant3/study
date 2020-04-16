@@ -51,4 +51,4 @@ production:
   <<: *default
   database: study_production
   username: ENV['DB_USERNAME']
-  password: <%= ENV['STUDY_DATABASE_PASSWORD'] %>
+  password: ENV['DB_PASSWORD']
