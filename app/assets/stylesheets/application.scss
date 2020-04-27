@@ -33,11 +33,6 @@
 
 .alert-alert {
   @extend .alert-danger;
-}s
-
-body {
-    margin: 0px;
-    padding: 0px;
 }
 
 header {
@@ -57,10 +52,6 @@ header {
     line-height: 80px;
 }
 
-.app_name {
-    margin: 0px;
-}
-
 .nav {
     float: right;
 }
@@ -72,39 +63,6 @@ header {
 .nav li { 
     display: inline-block;
     padding: 15px;
-}
-
-.message-color {
-    background-color: #64e1e8;
-    color: #000000;
-}
-
-h2 {
-    margin: 0;
-    padding: 0;
-    background-color: #64e1e8;
-}
-
-#notice {
-    background-color: #64e1e8;
-    margin: 0;
-}
-
-#style {
-    margin-top: 0;
-}
-
-#p-first {
-    margin-top: 0;
-}
-
-.message-color h1 h2 {
-    margin: 0;
-    padding: 0;
-}
-
-.show-photo {
-    background-color: #64e1e8;
 }
 
 .simple-calendar {
@@ -147,11 +105,3 @@ h2 {
       background-color: black;
       color: white;
   }
-
-.new_user {
-    background-color: #64e1e8;
-}
-
-.backcolor-default {
-    background-color: #64e1e8;
-}

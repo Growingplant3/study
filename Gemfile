@@ -64,6 +64,3 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'simple_calendar'
 gem 'dotenv-rails'
-
-# Bootstrap
-gem 'devise-bootstrap-views', '~> 1.0'
