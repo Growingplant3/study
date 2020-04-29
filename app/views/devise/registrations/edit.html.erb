@@ -10,14 +10,13 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :sex %>
-      #  User.sexes_i18n.invert
-      <%= f.select :sex, autofocus: true, autocomplete: 'name', class: 'form-control' %>
+      <%= f.label :sex %></br>
+      <%= f.select :sex, User.sexes_i18n.invert %>
     </div>
 
     <div class="form-group">
       <%= f.label :age %>
-      <%= f.number_field :age, autofocus: true, autocomplete: 'name', class: 'form-control' %>
+      <%= f.number_field :age, autofocus: true, autocomplete: 'age', class: 'form-control' %>
     </div>
 
     <div class="form-group">
