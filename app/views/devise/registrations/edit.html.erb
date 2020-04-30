@@ -20,6 +20,11 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :image %></br>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="form-group">
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
     </div>
