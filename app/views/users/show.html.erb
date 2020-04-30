@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= "現在#{current_user.name}さんがログインしています" %></h1>
 <div class="show-photo">
   <div class="message-color">
     <p id="p-first">
@@ -30,7 +31,6 @@
 
     <%= link_to '編集する', edit_user_registration_path %> |
     <%= link_to '削除する', "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'} %> |
-    <%#= link_to '戻る', users_path %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   </div>
-  <img src="/assets/jack-church-CBa301Yn7F8-unsplash.jpg" width="100%" height:"100%">
 </div>

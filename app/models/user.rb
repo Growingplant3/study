@@ -11,6 +11,6 @@ class User < ApplicationRecord
   }
 
   has_many :payments, dependent: :destroy
-  
   mount_uploader :image, ImageUploader
+  validates :name, presence: true
 end
