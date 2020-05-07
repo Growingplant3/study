@@ -1,36 +1,45 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= "現在#{current_user.name}さんがログインしています" %></h1>
-<div class="show-photo">
-  <div class="message-color">
-    <p id="p-first">
-      <strong>名前:</strong>
-      <%= @user.name %>
-    </p>
-
-    <p>
-      <strong>メールアドレス:</strong>
-      <%= @user.email %>
-    </p>
-
-    <p>
-      <strong>性別:</strong>
-      <%= @user.sex_i18n %>
-    </p>
-
-    <p>
-      <strong>年齢:</strong>
-      <%= @user.age %>
-    </p>
-
+<div class="container-login">
+  <p id="notice"><%= notice %></p>
+  <div class="form-gruop">
     <% if @user.image? %>
-      <%= image_tag @user.image.url, :width => '2%' %>
+      <%= image_tag @user.image.url,{height: "200px",width: "200px",class: "user-image"} %>
     <% else %>
       <p>残念！画像がありませんでした。</p>
     <% end %>
+  </div>  
 
-    <%= link_to '編集する', edit_user_registration_path %> |
-    <%= link_to '削除する', "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'} %> |
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <% if current_user.name.present? %>
+    <h1><%= "#{current_user.name}さんが" %></h1>
+  <% else %>
+    <h1><%= "#{current_user.email}さんが" %></h1>
+  <% end %>
+  <h1>ログインしています</h1>
+
+  <div class="form-gruop">
+    <strong>名前:</strong>
+    <%= @user.name %>
   </div>
+
+  <div class="form-gruop">
+    <strong>メールアドレス:</strong>
+    <%= @user.email %>
+  </div>
+
+  <div class="form-gruop">
+    <strong>性別:</strong>
+    <%= @user.sex_i18n %>
+  </div>
+
+  <div class="form-gruop">
+    <strong>年齢:</strong>
+    <%= @user.age %>
+  </div>
+  
+  <hr class="devise-link my-5">
+  <div class="form-group">
+    <%= link_to '編集する', edit_user_registration_path, class: 'btn btn-warning btn-block mb-4' %>
+    <%= link_to '削除する', "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'}, class: 'btn btn-danger btn-block mb-4' %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-block mb-4' %>
+  </div>
+
 </div>
